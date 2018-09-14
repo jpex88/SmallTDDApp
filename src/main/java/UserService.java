@@ -1,2 +1,2 @@
-public class UserService {
+public class UserService implements IUserService {
 }
