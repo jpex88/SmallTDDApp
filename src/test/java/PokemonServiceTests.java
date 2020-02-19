@@ -1,9 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.jws.soap.SOAPBinding;
-
-import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
 
 public class PokemonServiceTests {
@@ -22,10 +19,10 @@ public class PokemonServiceTests {
     @Test
     public void shouldReturnAPokemon() {
 
-        // Act
+        // Act (testar metoden purchasePokemonToUser vilket kallar på payment.pay() internt från externalPayment och sedan save)
         instanceToTest.purchasePokemonToUser(new User());
 
-        // Assert
+        // Assert (verifierar att purchase kör .pay() funktionen i externalPayment)
         verify(externalPaymentService, times(1)).pay();
     }
 
